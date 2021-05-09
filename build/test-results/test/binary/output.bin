@@ -1,0 +1,5 @@
+_Connecting to database:jdbc:mysql://localhost:3306/employeePayrollDB?characterEncoding=latin1
+GConnection is successfull!!!!!com.mysql.jdbc.JDBC4Connection@1fef05c5
+e[id=1,name=Bill,salary=100000.0, id=2,name=Mark,salary=500000.0, id=3,name=Charlie,salary=300000.0]
+_Connecting to database:jdbc:mysql://localhost:3306/employeePayrollDB?characterEncoding=latin1
+GConnection is successfull!!!!!com.mysql.jdbc.JDBC4Connection@6db72e62
