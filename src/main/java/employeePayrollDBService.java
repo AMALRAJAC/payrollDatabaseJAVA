@@ -45,22 +45,6 @@ public class employeePayrollDBService{
         return employeePayrollList;
     }
 
-    public List<EmployeePayrollData> getEmployeePayrollData(String name) {
-        List<EmployeePayrollData>employeePayrollList=null;
-        if (this.employeePayrollDataStatement == null) {
-            this.prepareStatementForEmployeeData();
-            try{
-                employeePayrollDataStatement.setString(1,name);
-                ResultSet resultSet=employeePayrollDataStatement.executeQuery();
-                employeePayrollList=this.getEmployeePayrollData(resultSet);
-            }catch (SQLException e){
-                e.printStackTrace();
-            }
-
-        }
-        return employeePayrollList;
-    }
-
     private List<EmployeePayrollData> getEmployeePayrollData(ResultSet resultSet) {
         List<EmployeePayrollData>employeePayrollList=new ArrayList<>();
         try{
@@ -88,19 +72,5 @@ public class employeePayrollDBService{
         }
     }
 
-
-    public int updateEmployeeData(String name, double salary) {
-        return this.updateEmployeeDataUsingStatement(name,salary);
-    }
-    private int updateEmployeeDataUsingStatement(String name, double salary) {
-        String sql=String.format("update payrollDB set salary=%.2f where name='%s';",salary,name);
-        try(Connection connection=this.getConnection()){
-            Statement statement=connection.createStatement();
-            return statement.executeUpdate(sql);
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-        return 0;
-    }
 
 }
