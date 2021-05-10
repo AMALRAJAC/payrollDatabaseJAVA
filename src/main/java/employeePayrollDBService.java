@@ -36,22 +36,6 @@ public class employeePayrollDBService{
             Date.valueOf(startDate), Date.valueOf(endDate));
     return this.getEmployeePayrollDataUsingDB(sql);
     }
-    public Map<String, Double> getAverageSalaryByGender() {
-        String sql ="SELECT gender,AVG(salary) as avg_salary FROM payrollDB GROUP BY gender;";
-        Map<String,Double>genderToAverageSalaryMap=new HashMap<>();
-        try(Connection connection=this.getConnection()){
-            Statement statement=connection.createStatement();
-            ResultSet resultSet=statement.executeQuery(sql);
-            while (resultSet.next()){
-                String gender=resultSet.getString("gender");
-                double salary=resultSet.getDouble("avg_salary");
-                genderToAverageSalaryMap.put(gender,salary);
-            }
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-        return genderToAverageSalaryMap;
-    }
 
     private List<EmployeePayrollData> getEmployeePayrollDataUsingDB(String sql) {
         List<EmployeePayrollData>employeePayrollList=new ArrayList<>();
@@ -123,21 +107,5 @@ public class employeePayrollDBService{
         }
         return 0;
     }
-
-
-
-
-//    private int updateEmployeeDataUsingPreparedStatement(String name, double salary) {
-//        try (Connection connection=this.getConnection()){
-//            String sql ="update payrollDB set salary=? where name=?;";
-//            PreparedStatement preparedStatement=connection.prepareStatement(sql);
-//            preparedStatement.setDouble(1,salary);
-//            preparedStatement.setString(2,name);
-//
-//        } catch (SQLException throwables) {
-//            throwables.printStackTrace();
-//        }
-//        return 0;
-//    }
 
 }

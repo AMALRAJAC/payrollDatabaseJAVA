@@ -50,12 +50,6 @@ public class EmployeePayrollService {
         return  this.employeePayrollList;
 
     }
-    public Map<String, Double> readAverageSalaryByGender(IOService ioService) {
-        if(ioService.equals(IOService.DB_IO)){
-            return employeePayrollDBService.getAverageSalaryByGender();
-        }
-        return null;
-    }
 
     public List<EmployeePayrollData> readEmployeePayrollForDateRange(IOService ioService, LocalDate startDate, LocalDate endDate) {
         if(ioService.equals(IOService.DB_IO)){
