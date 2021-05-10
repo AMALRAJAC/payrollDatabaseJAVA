@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="EmployeePayrollServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-10T01:51:58" hostname="DESKTOP-9F42HSG" time="1.564">
+  <properties/>
+  <testcase name="givenEmployeePayrollIoDB_whenRetrieved_shouldMatchEmployeeCount()" classname="EmployeePayrollServiceTest" time="1.564"/>
+  <system-out><![CDATA[Connecting to database:jdbc:mysql://localhost:3306/employeePayrollDB?characterEncoding=latin1
+Connection is successfull!!!!!com.mysql.jdbc.JDBC4Connection@4cab2820
+[id=1,name=Bill,salary=100000.0, id=2,name=Mark,salary=500000.0, id=3,name=Charlie,salary=300000.0]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
